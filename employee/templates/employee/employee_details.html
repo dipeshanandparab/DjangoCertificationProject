@@ -1,0 +1,35 @@
+{% extends 'voting/base.html' %}
+{% load static %}
+{% block content %}
+
+<a href="{% url 'Employee_List' %}"><--</a>
+<div class="bg-white text-center py-3">
+<h1>Employee Details</h1>
+    <table align="center" style="text-align:left" border="1px">
+        <tr class="py-3">
+            <td class="text-primary font-bold">Name</td>
+            <td>{{employee.name}}</td>
+        </tr>
+
+        <tr class="mt-3">
+            <td class="text-primary font-bold">Profile Image</td>
+            <td><img src="{{employee.image.url}}" class="img img-responsive" height="300px" width="200px"></td>
+        </tr>
+
+        <tr class="mt-3">
+            <td class="text-primary font-bold">Address</td>
+            <td>{{employee.address}}</td>
+        </tr>
+
+        <tr class="mt-3">
+            <td class="text-primary font-bold">Resume</td>
+            <td><a href="{{employee.resume.url}}" target="_blank">View Resume</a></td>
+        </tr>
+
+        <tr class="mt-3">
+            <td class="text-primary font-bold">Experience</td>
+            <td>{{employee.experience}}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
